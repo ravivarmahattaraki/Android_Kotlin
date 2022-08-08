@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidKotlin"
         tools:targetApi="31" >
-        <activity android:name=".Activities.FirstActivity"
+        <activity android:name="${launchingActivity}"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

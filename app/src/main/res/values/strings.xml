@@ -3,4 +3,7 @@
     <string name="hello_world">Hello World</string>
     <string name="second_activity">Second Activity</string>
     <string name="navigate">Navigate</string>
+    <string name="increment">Increment</string>
+    <string name="decrement">decrement</string>
+    <string name="null_value">null</string>
 </resources>
