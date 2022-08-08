@@ -18,7 +18,7 @@ class SecondActivity : AppCompatActivity() {
 
 
         val bundle : Bundle? = intent.extras
-        var name  = bundle!!.getString("NAME", "default")
+        var name  = bundle?.getString("NAME", "default")
         displayNameTV?.setText(name);
         val toast = Toast.makeText(this, "onCreate()", Toast.LENGTH_LONG).show()
         Log.d(tag, "onCreate: ")

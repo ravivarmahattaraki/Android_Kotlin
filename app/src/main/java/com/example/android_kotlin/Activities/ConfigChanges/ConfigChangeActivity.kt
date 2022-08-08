@@ -1,5 +1,6 @@
 package com.example.android_kotlin.Activities.ConfigChanges
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
@@ -8,15 +9,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_kotlin.Activities.SecondActivity
 import com.example.android_kotlin.R
 
 class ConfigChangeActivity : AppCompatActivity(), View.OnClickListener{
     private val tag = "LIFE_CYCLE_FIRST_ACT"
     private val COUNTER_KEY = "COUNTER_KEY"
-    private var incrementBtn : Button? = null
+    private var incrementBtn: Button? = null
     private var decrementBtn : Button? = null
     private var enterTextET : EditText? = null
     private var counterTv : TextView? = null
+    private var navigate : Button? = null
     private var counter = 0;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +28,11 @@ class ConfigChangeActivity : AppCompatActivity(), View.OnClickListener{
         decrementBtn = findViewById(R.id.decrementBtn)
         enterTextET = findViewById(R.id.enterTextET)
         counterTv = findViewById(R.id.counterTV)
+        navigate = findViewById(R.id.navigate)
 
         incrementBtn?.setOnClickListener(this);
         decrementBtn?.setOnClickListener(this)
+        navigate?.setOnClickListener(this)
 
         val savedCounter = savedInstanceState?.getInt(COUNTER_KEY)
         if(savedCounter != null)
@@ -93,6 +98,10 @@ class ConfigChangeActivity : AppCompatActivity(), View.OnClickListener{
             }
             R.id.decrementBtn ->{
                 counter--
+            }
+            R.id.navigate ->{
+                val intent = Intent(this, SecondActivity::class.java)
+                startActivity(intent)
             }
         }
         counterTv?.setText("$counter")
