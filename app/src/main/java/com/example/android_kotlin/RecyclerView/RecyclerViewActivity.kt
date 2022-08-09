@@ -25,5 +25,8 @@ class RecyclerViewActivity : AppCompatActivity() {
         val adapter = RecyclerAdapter(this, list!!)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+
     }
 }
