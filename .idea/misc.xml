@@ -6,8 +6,10 @@
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_config_change.xml" value="0.14947916666666666" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_first.xml" value="0.1" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_list_view.xml" value="0.11927083333333334" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_recycler_view.xml" value="0.14114583333333333" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_second.xml" value="0.14375" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/item_list_view.xml" value="0.11927083333333334" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/item_recycler_view.xml" value="0.14114583333333333" />
       </map>
     </option>
   </component>

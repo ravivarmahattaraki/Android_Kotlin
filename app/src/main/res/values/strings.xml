@@ -7,4 +7,5 @@
     <string name="decrement">decrement</string>
     <string name="null_value">null</string>
     <string name="default_value">Default</string>
+    <string name="title">Title</string>
 </resources>
