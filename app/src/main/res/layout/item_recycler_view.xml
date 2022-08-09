@@ -7,6 +7,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:padding="15dp"
         android:id="@+id/programingLangIv"
         android:src="@drawable/ic_launcher_background"
         android:layout_margin="5dp"
@@ -34,4 +35,12 @@
         app:layout_constraintTop_toBottomOf="@+id/titleTV"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/horizontal_line"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
