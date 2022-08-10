@@ -6,4 +6,13 @@
     <string name="null_value">null</string>
     <string name="default_value">Default</string>
     <string name="title">Title</string>
+    <string name="activity">Activity</string>
+    <string name="list_view">List View</string>
+    <string name="recycler_view">Recycler View</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="topics">Topics</string>
+    <string name="configuration_change">Configuration change</string>
 </resources>

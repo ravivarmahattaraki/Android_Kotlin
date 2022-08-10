@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_kotlin.Activities.ConfigChanges.ConfigChangeActivity
 import com.example.android_kotlin.R
 import java.security.AccessController.getContext
 
@@ -15,13 +16,20 @@ class FirstActivity : AppCompatActivity() {
 
     private val tag = "LIFE_CYCLE_FIRST_ACT"
     private var navigateBTN : Button? = null;
+    private lateinit var configChangeBtn : Button
     override fun onCreate(saveInstanceState : Bundle?){
         super.onCreate(saveInstanceState)
 
         setContentView(R.layout.activity_first)
         navigateBTN = findViewById(R.id.navigateBTN);
+        configChangeBtn = findViewById(R.id.navigateConfigChangeButton)
+
         navigateBTN?.setOnClickListener(View.OnClickListener {
             startActivity()
+        })
+        configChangeBtn.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, ConfigChangeActivity::class.java)
+            startActivity(intent)
         })
         val toast = Toast.makeText(this, "onCreate()",Toast.LENGTH_LONG).show()
         Log.d(tag, "onCreate: ")

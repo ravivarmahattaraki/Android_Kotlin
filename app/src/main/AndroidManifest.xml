@@ -12,20 +12,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidKotlin"
-        tools:targetApi="31" >
-        <activity android:name="${launchingActivity}"
+        tools:targetApi="31">
+
+        <activity
+            android:name="${launchingActivity}"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--Topic Activity-->
+        <activity android:name=".Activities.FirstActivity"/>
+        <activity android:name=".Activities.SecondActivity"/>
+        <activity android:name=".Activities.ConfigChanges.ConfigChangeActivity"/>
 
-        <activity android:name=".Activities.SecondActivity"
-            android:exported="false">
+        <!--Topic List View-->
+        <activity android:name=".ListView.ListViewActivity"/>
 
-        </activity>
+        <!--Topic Recycler View-->
+        <activity android:name=".RecyclerView.RecyclerViewActivity"/>
     </application>
-
 
 </manifest>
