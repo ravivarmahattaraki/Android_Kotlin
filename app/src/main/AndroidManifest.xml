@@ -33,6 +33,9 @@
 
         <!--Topic Recycler View-->
         <activity android:name=".RecyclerView.RecyclerViewActivity"/>
+
+        <!--Topic Fragments-->
+        <activity android:name=".Fragments.FragmentActivity"/>
     </application>
 
 </manifest>

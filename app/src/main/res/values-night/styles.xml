@@ -17,4 +17,10 @@
     <style name="horizontal_line">
         <item name="backgroundColor">@color/white</item>
     </style>
+    <style name="text_view">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:text">@string/default_value</item>
+    </style>
 </resources>

@@ -15,4 +15,9 @@
     <string name="help">Help</string>
     <string name="topics">Topics</string>
     <string name="configuration_change">Configuration change</string>
+    <string name="fragments">Fragments</string>
+    <string name="fragment_one">Fragment One</string>
+    <string name="open_second_fragment">Open Second Fragment</string>
+    <string name="fragment_two">Fragment Two</string>
+    <string name="back">Back</string>
 </resources>

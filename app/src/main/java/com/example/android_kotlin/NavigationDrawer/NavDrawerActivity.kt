@@ -18,6 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.android_kotlin.Activities.FirstActivity
+import com.example.android_kotlin.Fragments.FragmentActivity
 import com.example.android_kotlin.ListView.ListViewActivity
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
@@ -78,6 +79,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_recycler_view ->{
                 startMyActivity(RecyclerViewActivity::class.java)
+            }
+            R.id.nav_item_fragments ->{
+                startMyActivity(FragmentActivity::class.java)
             }
         }
         //return true item click state will be saved
