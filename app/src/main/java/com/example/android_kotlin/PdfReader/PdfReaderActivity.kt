@@ -17,6 +17,8 @@ class PdfReaderActivity : AppCompatActivity() {
             "pdfRenderFragment"
         )
         fragmentTransaction.commit()
+
+
     }
 
 }

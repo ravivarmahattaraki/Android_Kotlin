@@ -41,6 +41,9 @@ android {
     buildFeatures {
         viewBinding false
     }
+    aaptOptions {
+        noCompress "pdf"
+    }
 }
 
 dependencies {
@@ -64,5 +67,5 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.9'
 
     //Pdf reader
-    //implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'androidx.window:window:1.0.0'
 }
