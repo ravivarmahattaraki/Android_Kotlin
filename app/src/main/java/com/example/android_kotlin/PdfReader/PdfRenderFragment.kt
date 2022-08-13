@@ -1,87 +1,131 @@
 package com.example.android_kotlin.PdfReader
 
-import android.graphics.Bitmap
-import android.graphics.pdf.PdfRenderer
+import android.graphics.Matrix
+import android.graphics.PointF
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.ScaleGestureDetector
-import android.view.View
-import android.view.ViewGroup
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebView
+import android.view.*
+import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.window.layout.WindowMetrics
-import androidx.window.layout.WindowMetricsCalculator
 import com.example.android_kotlin.R
-import java.io.FileNotFoundException
 
 
-class PdfRenderFragment : Fragment() {
-    private val mScaleGestureDetector: ScaleGestureDetector? = null
-    private val mScaleFactor = 1.0f
-    var width : Int = 0
-    var height : Int = 0
-
+class PdfRenderFragment : Fragment(), View.OnTouchListener{
+    lateinit var pdfRenderManager: PdfRenderManager
     lateinit var pdfIv : ImageView
-    companion object{
-        const val TAG = "PdfRenderFragment"
-    }
+    lateinit var zoomInBtm : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-
+    private var scaleGestureDetector: ScaleGestureDetector? = null
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_pdf_render, container, false)
         pdfIv = view.findViewById(R.id.pdfIV)
+        pdfRenderManager = PdfRenderManager("Android_kotlin.pdf",requireContext())
+        pdfIv.setImageBitmap(pdfRenderManager.list[0])
 
-
-        val windowMetrics: WindowMetrics =
-            WindowMetricsCalculator.getOrCreate().computeCurrentWindowMetrics(requireActivity())
-        height = windowMetrics.bounds.height()
-        width = windowMetrics.bounds.width()
-
+        pdfIv.setOnTouchListener(this)
 
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        pdfIv.setImageBitmap(null)
+        pdfRenderManager.close()
     }
 
 
     override fun onResume() {
         super.onResume()
-        /** case 1.
-         * java.io.FileNotFoundException: This file can not be opened as a file descriptor;
-         * it is probably compressed
-         * add in gradle.build aaptOptions { noCompress "pdf"}
-         * */
-        try {
-            val parcelFileDescriptor =
-                context?.assets?.openFd("Android_kotlin.pdf")?.parcelFileDescriptor
-            val pdfRenderer = PdfRenderer(parcelFileDescriptor!!)
-            Log.d(TAG, "${pdfRenderer.pageCount}")
-            val pageCount = pdfRenderer.pageCount
-            for (i in 0 until pageCount-1){
-                val page = pdfRenderer.openPage(0);
+    }
+    fun onTouchEvent(motionEvent: MotionEvent?): Boolean {
+        scaleGestureDetector?.onTouchEvent(motionEvent)
+        return true
+    }
+    private val TAG = "Touch"
+    private val MIN_ZOOM = 1f
+    private val MAX_ZOOM = 1f
 
-                val w: Int = page.width//width//pdfIv.measuredWidth
-                val h: Int = page.height//height//pdfIv.measuredHeight
+    // These matrices will be used to scale points of the image
+    var matrix: Matrix = Matrix()
+    var savedMatrix: Matrix = Matrix()
 
-                val conf = Bitmap.Config.ARGB_8888 // see other conf types
+    // The 3 states (events) which the user is trying to perform
+    val NONE = 0
+    val DRAG = 1
+    val ZOOM = 2
+    var mode = NONE
 
-                val mBitMap = Bitmap.createBitmap(w, h, conf)
+    // these PointF objects are used to record the point(s) the user is touching
+    var start = PointF()
+    var mid = PointF()
+    var oldDist = 1.0
 
-                page.render(mBitMap!!,null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
-                pdfIv.setImageBitmap(mBitMap)
-                page.close()
+    override fun onTouch(v: View, event: MotionEvent): Boolean {
+        val view = v as ImageView
+        view.scaleType = ImageView.ScaleType.MATRIX
+        val scale: Double
+        when (event.action and MotionEvent.ACTION_MASK) {
+            MotionEvent.ACTION_DOWN -> {
+                savedMatrix.set(matrix)
+                start.set(event.x, event.y)
+                Log.d(TAG, "mode=DRAG") // write to LogCat
+                mode = DRAG
             }
-
-        }catch (e : FileNotFoundException){
-            Log.e(TAG, e.printStackTrace().toString())
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_POINTER_UP -> {
+                mode = NONE
+                Log.d(TAG, "mode=NONE")
+            }
+            MotionEvent.ACTION_POINTER_DOWN -> {
+                oldDist = spacing(event)
+                Log.d(TAG, "oldDist=$oldDist")
+                if (oldDist > 5f) {
+                    savedMatrix.set(matrix)
+                    midPoint(mid, event)
+                    mode = ZOOM
+                    Log.d(TAG, "mode=ZOOM")
+                }
+            }
+            MotionEvent.ACTION_MOVE -> if (mode == DRAG) {
+                matrix.set(savedMatrix)
+                matrix.postTranslate(
+                    event.x - start.x,
+                    event.y - start.y
+                ) // create the transformation in the matrix  of points
+            } else if (mode == ZOOM) {
+                // pinch zooming
+                val newDist = spacing(event)
+                Log.d(TAG, "newDist=$newDist")
+                if (newDist > 5f) {
+                    matrix.set(savedMatrix)
+                    scale = newDist / oldDist // setting the scaling of the
+                    // matrix...if scale > 1 means
+                    // zoom in...if scale < 1 means
+                    // zoom out
+                    matrix.postScale(scale.toFloat(), scale.toFloat(), mid.x, mid.y)
+                }
+            }
         }
+        view.imageMatrix = matrix // display the transformation on screen
+        return true // indicate event was handled
     }
 
+
+    private fun spacing(event: MotionEvent): Double {
+        val x = event.getX(0) - event.getX(1)
+        val y = event.getY(0) - event.getY(1)
+        return Math.sqrt((x * x + y * y).toDouble())
+    }
+
+    private fun midPoint(point: PointF, event: MotionEvent) {
+        val x = event.getX(0) + event.getX(1)
+        val y = event.getY(0) + event.getY(1)
+        point[x / 2] = y / 2
+    }
 }

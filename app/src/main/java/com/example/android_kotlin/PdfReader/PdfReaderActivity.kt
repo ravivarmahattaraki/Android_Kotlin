@@ -12,7 +12,7 @@ class PdfReaderActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         val pdfRenderFragment = PdfRenderFragment()
-        fragmentTransaction.add(
+        fragmentTransaction.replace(
             R.id.fragmentContainerPdfRender, pdfRenderFragment,
             "pdfRenderFragment"
         )
