@@ -20,6 +20,8 @@ import androidx.appcompat.widget.Toolbar
 import com.example.android_kotlin.Activities.FirstActivity
 import com.example.android_kotlin.Fragments.FragmentActivity
 import com.example.android_kotlin.ListView.ListViewActivity
+import com.example.android_kotlin.PdfReader.PdfReaderActivity
+import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
 
@@ -82,6 +84,16 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_fragments ->{
                 startMyActivity(FragmentActivity::class.java)
+            }
+            R.id.nav_item_pdf_viewer ->{
+                startMyActivity(PdfReaderActivity::class.java)
+                /*val fragmentManager = supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                val pdfRenderFragment = PdfRenderFragment()
+                fragmentTransaction.add(R.id.fragmentContainer1,pdfRenderFragment,
+                    "pdfRenderFragment")
+                fragmentTransaction.commit()*/
+
             }
         }
         //return true item click state will be saved

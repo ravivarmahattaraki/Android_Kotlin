@@ -32,6 +32,10 @@
                 android:id="@+id/nav_item_fragments"
                 android:icon="@drawable/android"
                 android:title="@string/fragments"/>
+            <item
+                android:id="@+id/nav_item_pdf_viewer"
+                android:icon="@drawable/android"
+                android:title="@string/pdf_viewer"/>
         </menu>
     </item>
 </menu>

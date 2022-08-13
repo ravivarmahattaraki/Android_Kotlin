@@ -36,6 +36,9 @@
 
         <!--Topic Fragments-->
         <activity android:name=".Fragments.FragmentActivity"/>
+
+        <!--Topic Pdf Render-->
+        <activity android:name=".PdfReader.PdfReaderActivity"/>
     </application>
 
 </manifest>
