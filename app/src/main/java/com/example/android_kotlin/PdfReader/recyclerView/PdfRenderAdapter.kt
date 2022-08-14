@@ -1,64 +1,40 @@
-package com.example.android_kotlin.PdfReader
+package com.example.android_kotlin.PdfReader.recyclerView
 
+import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.graphics.PointF
 import android.os.Build
-import android.os.Bundle
 import android.util.Log
-import android.view.*
-import android.widget.Button
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android_kotlin.PdfReader.recyclerView.PdfRenderAdapter
 import com.example.android_kotlin.R
 
-
-class PdfRenderFragment : Fragment(), View.OnTouchListener{
-    lateinit var pdfRenderManager: PdfRenderManager
-    lateinit var pdfIv : ImageView
-    lateinit var pdfRenderRv : RecyclerView
-    lateinit var zoomInBtm : Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    private var scaleGestureDetector: ScaleGestureDetector? = null
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        val view = inflater.inflate(R.layout.fragment_pdf_render, container, false)
-        pdfIv = view.findViewById(R.id.pdfIV)
-        pdfRenderManager = PdfRenderManager("Android_kotlin.pdf",requireContext())
-        pdfIv.setImageBitmap(pdfRenderManager.list[0])
-
-
-        pdfRenderRv = view.findViewById(R.id.pdfRenderRv)
-        val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager.list)
-        pdfRenderRv.adapter = pdfRenderAdapter
-        pdfRenderRv.layoutManager = LinearLayoutManager(requireContext())
-        //pdfRenderRv.setOnTouchListener(this)
+class PdfRenderAdapter(val context: Context,var list: ArrayList<Bitmap>) :
+    RecyclerView.Adapter<PdfPageViewHolder>(), View.OnTouchListener {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PdfPageViewHolder {
+        val layoutInflater = LayoutInflater.from(context)
+        val view = layoutInflater.inflate(R.layout.item_pdf_page_render,parent,false)
         //view.setOnTouchListener(this)
-        return view
+        return PdfPageViewHolder(view)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        pdfIv.setImageBitmap(null)
-        pdfRenderManager.close()
+    override fun onBindViewHolder(holder: PdfPageViewHolder, position: Int) {
+        holder.imageView.setImageBitmap(list[position])
+        holder.imageView.setOnTouchListener(this)
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
     }
 
 
-    override fun onResume() {
-        super.onResume()
-    }
-    fun onTouchEvent(motionEvent: MotionEvent?): Boolean {
-        scaleGestureDetector?.onTouchEvent(motionEvent)
-        return true
-    }
     private val TAG = "Touch"
     private val MIN_ZOOM = 1f
     private val MAX_ZOOM = 1f
@@ -81,9 +57,8 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onTouch(v: View, event: MotionEvent): Boolean {
 
-        val view = v as RecyclerView
-        //view.scaleType = ImageView.ScaleType.MATRIX
-
+        val view = v as ImageView
+        //view.scaleType = ConstraintLayout.ScaleType.MATRIX
         val scale: Double
         when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
@@ -128,7 +103,6 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
         }
         view.animationMatrix = matrix
         //view.imageMatrix = matrix // display the transformation on screen
-
         return true // indicate event was handled
     }
 
