@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,39 +20,44 @@ import com.example.android_kotlin.R
 
 
 class PdfRenderFragment : Fragment(), View.OnTouchListener{
-    lateinit var pdfRenderManager: PdfRenderManager
+    var pdfRenderManager: PdfRenderManager? = null
     lateinit var pdfIv : ImageView
     lateinit var pdfRenderRv : RecyclerView
     lateinit var viewPagerImageSlider : ViewPager2
     lateinit var zoomInBtm : Button
+    private var scaleGestureDetector: ScaleGestureDetector? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    private var scaleGestureDetector: ScaleGestureDetector? = null
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_pdf_render, container, false)
         pdfIv = view.findViewById(R.id.pdfIV)
-        pdfRenderManager = PdfRenderManager("Android_kotlin.pdf",requireContext())
-        pdfIv.setImageBitmap(pdfRenderManager.list[0])
-
-
         viewPagerImageSlider = view.findViewById(R.id.viewPagerImageSlider)
-        val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager.list,viewPagerImageSlider)
-        viewPagerImageSlider.adapter = pdfRenderAdapter
-        //viewPagerImageSlider.layoutManager = LinearLayoutManager(requireContext())
-        //pdfRenderRv.setOnTouchListener(this)
-        //view.setOnTouchListener(this)
+
+        val fileName = arguments?.getString("PDF_FILE")//savedInstanceState?.getString("PDF_FILE")
+        if(fileName != null){
+            Toast.makeText(context,"File found", Toast.LENGTH_SHORT).show()
+            pdfRenderManager = PdfRenderManager(fileName!!,requireContext())
+            pdfIv.setImageBitmap(pdfRenderManager!!.list[0])
+            val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager!!.list,viewPagerImageSlider)
+            viewPagerImageSlider.adapter = pdfRenderAdapter
+        }else{
+            Toast.makeText(context,"File name not found", Toast.LENGTH_SHORT).show()
+        }
+
         return view
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         pdfIv.setImageBitmap(null)
-        pdfRenderManager.close()
+        if(pdfRenderManager != null){
+            pdfRenderManager?.close()
+        }
     }
 
 

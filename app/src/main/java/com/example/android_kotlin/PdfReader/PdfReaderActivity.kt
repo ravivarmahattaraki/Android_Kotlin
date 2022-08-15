@@ -12,6 +12,9 @@ class PdfReaderActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         val pdfRenderFragment = PdfRenderFragment()
+        val bundle = Bundle()
+        bundle.putString("PDF_FILE","Android_kotlin.pdf")
+        pdfRenderFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.fragmentContainerPdfRender, pdfRenderFragment,
             "pdfRenderFragment"
