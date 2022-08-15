@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/drawable/ic_baseline_navigate_before_24.xml" value="0.1" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/drawable/ic_baseline_navigate_next_24.xml" value="0.1" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />

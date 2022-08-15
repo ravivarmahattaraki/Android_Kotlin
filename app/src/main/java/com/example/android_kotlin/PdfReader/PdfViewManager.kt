@@ -46,7 +46,7 @@ class PdfRenderManager {
         try {
             for (i in 0 until pdfRenderer.pageCount-1){
                 val page = pdfRenderer.openPage(i);
-                val w: Int = page.width *2 //width//pdfIv.measuredWidth
+                val w: Int = page.width*2  //width//pdfIv.measuredWidth
                 val h: Int = page.height*2//height//pdfIv.measuredHeight
                 val conf = Bitmap.Config.ARGB_8888 // see other conf types
                 val mBitMap = Bitmap.createBitmap(w, h, conf)

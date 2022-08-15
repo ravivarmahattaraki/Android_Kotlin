@@ -12,6 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.android_kotlin.PdfReader.recyclerView.PdfRenderAdapter
 import com.example.android_kotlin.R
 
@@ -20,6 +22,7 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
     lateinit var pdfRenderManager: PdfRenderManager
     lateinit var pdfIv : ImageView
     lateinit var pdfRenderRv : RecyclerView
+    lateinit var viewPagerImageSlider : ViewPager2
     lateinit var zoomInBtm : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,10 +39,10 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
         pdfIv.setImageBitmap(pdfRenderManager.list[0])
 
 
-        pdfRenderRv = view.findViewById(R.id.pdfRenderRv)
-        val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager.list)
-        pdfRenderRv.adapter = pdfRenderAdapter
-        pdfRenderRv.layoutManager = LinearLayoutManager(requireContext())
+        viewPagerImageSlider = view.findViewById(R.id.viewPagerImageSlider)
+        val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager.list,viewPagerImageSlider)
+        viewPagerImageSlider.adapter = pdfRenderAdapter
+        //viewPagerImageSlider.layoutManager = LinearLayoutManager(requireContext())
         //pdfRenderRv.setOnTouchListener(this)
         //view.setOnTouchListener(this)
         return view
@@ -81,7 +84,7 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onTouch(v: View, event: MotionEvent): Boolean {
 
-        val view = v as RecyclerView
+        val view = v as ViewPager2
         //view.scaleType = ImageView.ScaleType.MATRIX
 
         val scale: Double

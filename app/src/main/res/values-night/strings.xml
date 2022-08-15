@@ -21,4 +21,7 @@
     <string name="fragment_two">Fragment Two</string>
     <string name="back">Back</string>
     <string name="pdf_viewer">Pdf Viewer</string>
+    <string name="enter_page_number">Enter Page Number</string>
+    <string name="Ok">Ok</string>
+    <string name="close">Close</string>
 </resources>
