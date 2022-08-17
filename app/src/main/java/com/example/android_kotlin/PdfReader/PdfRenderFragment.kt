@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.android_kotlin.Const
 import com.example.android_kotlin.PdfReader.recyclerView.PdfRenderAdapter
 import com.example.android_kotlin.R
 
@@ -38,9 +39,9 @@ class PdfRenderFragment : Fragment(), View.OnTouchListener{
         pdfIv = view.findViewById(R.id.pdfIV)
         viewPagerImageSlider = view.findViewById(R.id.viewPagerImageSlider)
 
-        val fileName = arguments?.getString("PDF_FILE")//savedInstanceState?.getString("PDF_FILE")
+        val fileName = arguments?.getString(Const.PDF_FILE)//savedInstanceState?.getString("PDF_FILE")
         if(fileName != null){
-            Toast.makeText(context,"File found", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context,"File found", Toast.LENGTH_SHORT).show()
             pdfRenderManager = PdfRenderManager(fileName!!,requireContext())
             pdfIv.setImageBitmap(pdfRenderManager!!.list[0])
             val pdfRenderAdapter = PdfRenderAdapter(requireContext(),pdfRenderManager!!.list,viewPagerImageSlider)

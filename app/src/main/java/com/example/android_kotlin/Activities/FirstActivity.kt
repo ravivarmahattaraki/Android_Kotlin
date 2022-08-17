@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentContainer
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.commit
 import com.example.android_kotlin.Activities.ConfigChanges.ConfigChangeActivity
+import com.example.android_kotlin.Const
 import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.PdfReader.PdfRenderManager
 import com.example.android_kotlin.R
@@ -48,7 +49,7 @@ class FirstActivity : AppCompatActivity() {
             val fragmentTransaction = fragmentManager.beginTransaction()
             val pdfRenderFragment = PdfRenderFragment()
             val bundle = Bundle()
-            bundle.putString("PDF_FILE","Android_kotlin.pdf")
+            bundle.putString(Const.PDF_FILE,"Activity.pdf")
             pdfRenderFragment.arguments = bundle
             fragmentTransaction.add(R.id.activityFragmentContainer,pdfRenderFragment,
                 "PdfRenderFragment")

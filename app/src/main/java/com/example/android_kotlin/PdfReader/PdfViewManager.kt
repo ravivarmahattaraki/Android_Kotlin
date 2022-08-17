@@ -5,7 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
 import android.util.Log
-import java.io.FileNotFoundException
+import java.io.*
+
 
 class PdfRenderManager {
 
@@ -24,7 +25,7 @@ class PdfRenderManager {
     }
 
     private fun init() {
-        this.parcelFileDescriptor = getFileDescriptor()
+        this.parcelFileDescriptor = getFileDescriptorV2()
         this.pdfRenderer = getPdfRenderer()
         createBitmaps()
     }
@@ -32,7 +33,28 @@ class PdfRenderManager {
     private fun getFileDescriptor() : ParcelFileDescriptor {
         return context.assets.openFd(fileName).parcelFileDescriptor
     }
+    private fun getFileDescriptorV1() : ParcelFileDescriptor {
+        val file = File("/sdcard/android_kotlin.pdf")
+        val pfd=ParcelFileDescriptor.open(file,ParcelFileDescriptor.MODE_READ_ONLY);
 
+        return pfd//context.assets.openFd(fileName).parcelFileDescriptor
+    }
+    private fun getFileDescriptorV2() : ParcelFileDescriptor {
+        val inputStream: InputStream =context.assets.open(fileName)// context.resources.openRawResource(R.raw.android_kotlin)
+        val tempFile = File.createTempFile("pre", "suf")
+        copyFile(inputStream,  FileOutputStream(tempFile));
+        val pfd=ParcelFileDescriptor.open(tempFile,ParcelFileDescriptor.MODE_READ_ONLY);
+
+        return pfd
+    }
+    @Throws(IOException::class)
+    private fun copyFile(`in`: InputStream, out: OutputStream) {
+        val buffer = ByteArray(1024)
+        var read: Int
+        while (`in`.read(buffer).also { read = it } != -1) {
+            out.write(buffer, 0, read)
+        }
+    }
     @JvmName("getPdfRenderer1")
     private fun getPdfRenderer() : PdfRenderer{
         return PdfRenderer(parcelFileDescriptor)
@@ -44,7 +66,7 @@ class PdfRenderManager {
      * */
     private fun createBitmaps() {
         try {
-            for (i in 0 until pdfRenderer.pageCount-1){
+            for (i in 0 until pdfRenderer.pageCount){
                 val page = pdfRenderer.openPage(i);
                 val w: Int = page.width*2  //width//pdfIv.measuredWidth
                 val h: Int = page.height*2//height//pdfIv.measuredHeight
