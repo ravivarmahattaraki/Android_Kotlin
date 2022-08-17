@@ -1,12 +1,17 @@
 package com.example.android_kotlin.RecyclerView
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android_kotlin.Const
+import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 
 class RecyclerViewActivity : AppCompatActivity() {
+    private lateinit var pdfIV: ImageView
     private var list : ArrayList<ProgrammingLanguageData>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +31,24 @@ class RecyclerViewActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        pdfIV = findViewById(R.id.infoRecyclerViewIv)
+        pdfIV.setOnClickListener(View.OnClickListener {
+            startFragment()
+        })
 
-
+    }
+    private fun startFragment() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val pdfRenderFragment = PdfRenderFragment()
+        val bundle = Bundle()
+        bundle.putString(Const.PDF_FILE, "Recycler_view.pdf")
+        pdfRenderFragment.arguments = bundle
+        fragmentTransaction.add(
+            R.id.activityFragmentContainer, pdfRenderFragment,
+            "PdfRenderFragment"
+        )
+        fragmentTransaction.addToBackStack("PdfRenderFragment")
+        fragmentTransaction.commit()
     }
 }

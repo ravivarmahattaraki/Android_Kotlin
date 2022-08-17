@@ -7,15 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.example.android_kotlin.Const
+import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 
 class FragmentOne : Fragment() {
 
     lateinit var navigateBtn : Button
+    lateinit var pdfIV : ImageView
     companion object {
         //static block
         private const val TAG = "FRAGMENT_ONE"
@@ -44,6 +48,11 @@ class FragmentOne : Fragment() {
             fragmentTransaction?.commit()
             Toast.makeText(context,"REPLACE TRANSACTION:\nFragment one replace by fragment two", Toast.LENGTH_LONG).show()
 
+        })
+
+        pdfIV = view.findViewById(R.id.infoFragmentIv)
+        pdfIV.setOnClickListener(View.OnClickListener {
+            startFragment()
         })
         return view
 
@@ -83,6 +92,19 @@ class FragmentOne : Fragment() {
         super.onDetach()
         Log.d(TAG, "onDetach: ")
     }
-
+    private fun startFragment() {
+        val fragmentManager = activity?.supportFragmentManager
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        val pdfRenderFragment = PdfRenderFragment()
+        val bundle = Bundle()
+        bundle.putString(Const.PDF_FILE, "Fragments.pdf")
+        pdfRenderFragment.arguments = bundle
+        fragmentTransaction?.add(
+            R.id.fragmentContainer, pdfRenderFragment,
+            "PdfRenderFragment"
+        )
+        fragmentTransaction?.addToBackStack("PdfRenderFragment")
+        fragmentTransaction?.commit()
+    }
 
 }

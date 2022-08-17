@@ -45,19 +45,25 @@ class FirstActivity : AppCompatActivity() {
             startActivity(intent)
         })
         infoIv.setOnClickListener(View.OnClickListener {
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            val pdfRenderFragment = PdfRenderFragment()
-            val bundle = Bundle()
-            bundle.putString(Const.PDF_FILE,"Activity.pdf")
-            pdfRenderFragment.arguments = bundle
-            fragmentTransaction.add(R.id.activityFragmentContainer,pdfRenderFragment,
-                "PdfRenderFragment")
-            fragmentTransaction.addToBackStack("PdfRenderFragment")
-            fragmentTransaction.commit()
+            startFragment()
         })
         val toast = Toast.makeText(this, "onCreate()",Toast.LENGTH_SHORT).show()
         Log.d(tag, "onCreate: ")
+    }
+
+    private fun startFragment() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val pdfRenderFragment = PdfRenderFragment()
+        val bundle = Bundle()
+        bundle.putString(Const.PDF_FILE, "Activity.pdf")
+        pdfRenderFragment.arguments = bundle
+        fragmentTransaction.add(
+            R.id.activityFragmentContainer, pdfRenderFragment,
+            "PdfRenderFragment"
+        )
+        fragmentTransaction.addToBackStack("PdfRenderFragment")
+        fragmentTransaction.commit()
     }
 
     override fun onStart(){
