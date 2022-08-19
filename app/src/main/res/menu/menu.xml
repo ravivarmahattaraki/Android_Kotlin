@@ -38,4 +38,21 @@
                 android:title="@string/pdf_viewer"/>
         </menu>
     </item>
+
+    <item android:title="@string/design_patterns">
+        <menu>
+            <item android:id="@+id/nav_item_creational_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/creational_patterns"/>
+
+            <item android:id="@+id/nav_item_structural_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/structural_patterns"/>
+
+            <item android:id="@+id/nav_item_behavioural_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/behavioural_patterns"/>
+
+        </menu>
+    </item>
 </menu>

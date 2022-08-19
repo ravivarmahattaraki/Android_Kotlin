@@ -37,4 +37,9 @@
     <string name="enter_page_number">Enter Page Number</string>
     <string name="Ok">Ok</string>
     <string name="close">Close</string>
+    <string name="classic_singleton">Classic Singleton</string>
+    <string name="design_patterns">Design patterns</string>
+    <string name="structural_patterns">Structural Patterns</string>
+    <string name="behavioural_patterns">Behavioural Patterns</string>
+    <string name="creational_patterns">creational Patterns</string>
 </resources>

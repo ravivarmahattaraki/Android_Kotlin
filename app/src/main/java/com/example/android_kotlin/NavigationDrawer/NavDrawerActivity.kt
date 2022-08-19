@@ -4,24 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.android_kotlin.Activities.FirstActivity
+import com.example.android_kotlin.DesignPattern.CreationalPatterns.CreationalPatternActivity
 import com.example.android_kotlin.Fragments.FragmentActivity
 import com.example.android_kotlin.ListView.ListViewActivity
 import com.example.android_kotlin.PdfReader.PdfReaderActivity
-import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
 
@@ -50,7 +43,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.nav_drawer, menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
@@ -87,13 +80,15 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_pdf_viewer ->{
                 startMyActivity(PdfReaderActivity::class.java)
-                /*val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                val pdfRenderFragment = PdfRenderFragment()
-                fragmentTransaction.add(R.id.fragmentContainer1,pdfRenderFragment,
-                    "pdfRenderFragment")
-                fragmentTransaction.commit()*/
-
+            }
+            R.id.nav_item_creational_patterns ->{
+                startMyActivity(CreationalPatternActivity::class.java)
+            }
+            R.id.nav_item_structural_patterns ->{
+                startMyActivity(FragmentActivity::class.java)
+            }
+            R.id.nav_item_behavioural_patterns ->{
+                startMyActivity(PdfReaderActivity::class.java)
             }
         }
         //return true item click state will be saved

@@ -42,6 +42,9 @@
 
         <!--Topic Pdf Render-->
         <activity android:name=".PdfReader.PdfReaderActivity"/>
+        
+        <!--Design patterns-->
+        <activity android:name=".DesignPattern.CreationalPatterns.CreationalPatternActivity"/>
     </application>
 
 </manifest>
