@@ -1,8 +1,12 @@
 package com.example.android_kotlin.DesignPattern.CreationalPatterns
 
+import android.app.Notification
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.JavaCarBuilder
+import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.KotlinCarBuilder
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ClassicSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.KotlinSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ThreadSafeSingleTon
@@ -13,6 +17,7 @@ class CreationalPatternActivity : AppCompatActivity() {
     companion object{
         const val CLASSIC_SINGLE_TON = "CLASSIC_SINGLE_TON"
         const val CLASSIC_SINGLE_TON_THREAD = "CLASSIC_SINGLE_TON_THREAD"
+        const val BUILDER_PATTERN = "BUILDER_PATTERN"
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +30,16 @@ class CreationalPatternActivity : AppCompatActivity() {
         //classicSingleTon()
         //classicSingleTonThreads()
         //classicSingleTonThreadSafe()
-        kotlinSingleTon()
+        //kotlinSingleTon()
+
+        /** Builder patterns
+         * */
+        javaBuilderExample1()
+        kotlinBuilderExample1()
     }
 
+    /**Singleton Examples
+     * */
     private fun classicSingleTon() {
         ClassicSingleTon.destroyObject()
         for (i in 0..2) {
@@ -81,8 +93,6 @@ class CreationalPatternActivity : AppCompatActivity() {
 
         }
     }
-
-
     internal class MyThread(latch: CountDownLatch) : Runnable {
         var latch: CountDownLatch
 
@@ -113,5 +123,40 @@ class CreationalPatternActivity : AppCompatActivity() {
         init {
             this.latch = latch
         }
+    }
+
+    /**Builder pattern
+     * */
+    private fun javaBuilderExample1(){
+        val javaCarBuilder = JavaCarBuilder.Builder()
+            .setCarModel(1)
+            .setBrand("Audi")
+            .setColor("Blue").build()
+        Log.d(BUILDER_PATTERN, javaCarBuilder.toString())
+
+        val javaCarBuilder2 = JavaCarBuilder.Builder()
+            .setCarModel(2)
+            .setBrand("Porsche")
+            .setColor("RED").build()
+        Log.d(BUILDER_PATTERN, javaCarBuilder2.toString())
+
+        val javaCarBuilder3 = JavaCarBuilder.Builder().build()
+        Log.d(BUILDER_PATTERN, javaCarBuilder3.toString())
+    }
+    private fun kotlinBuilderExample1(){
+        val kotlinCarBuilder = KotlinCarBuilder.Builder()
+            .setCarModel(3)
+            .setCarBrand("Maruti")
+            .setCarColor("Black").build()
+        Log.d(BUILDER_PATTERN, kotlinCarBuilder.toString())
+
+        val kotlinCarBuilder1 = KotlinCarBuilder.Builder()
+            .setCarModel(4)
+            .setCarBrand("Honda")
+            .setCarColor("White").build()
+        Log.d(BUILDER_PATTERN, kotlinCarBuilder1.toString())
+
+        val kotlinCarBuilder2 = KotlinCarBuilder.Builder().build()
+        Log.d(BUILDER_PATTERN, kotlinCarBuilder2.toString())
     }
 }
