@@ -158,5 +158,11 @@ class CreationalPatternActivity : AppCompatActivity() {
 
         val kotlinCarBuilder2 = KotlinCarBuilder.Builder().build()
         Log.d(BUILDER_PATTERN, kotlinCarBuilder2.toString())
+
+        val kotlinCarBuilder3 = KotlinCarBuilder.build()
+        Log.d(BUILDER_PATTERN, kotlinCarBuilder3.toString())
+
+        val kotlinCarBuilder4 = KotlinCarBuilder.setCarBrand("Bukati").build()
+        Log.d(BUILDER_PATTERN, kotlinCarBuilder4.toString())
     }
 }
