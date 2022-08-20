@@ -7,6 +7,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.JavaCarBuilder
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.KotlinCarBuilder
+import com.example.android_kotlin.DesignPattern.CreationalPatterns.Factory.Shape
+import com.example.android_kotlin.DesignPattern.CreationalPatterns.Factory.ShapeFactory
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ClassicSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.KotlinSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ThreadSafeSingleTon
@@ -18,6 +20,7 @@ class CreationalPatternActivity : AppCompatActivity() {
         const val CLASSIC_SINGLE_TON = "CLASSIC_SINGLE_TON"
         const val CLASSIC_SINGLE_TON_THREAD = "CLASSIC_SINGLE_TON_THREAD"
         const val BUILDER_PATTERN = "BUILDER_PATTERN"
+        const val FACTORY_PATTERN = "FACTORY_PATTERN"
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +39,16 @@ class CreationalPatternActivity : AppCompatActivity() {
          * */
         javaBuilderExample1()
         kotlinBuilderExample1()
+
+        /** Factory Patterns
+         * */
+        val shapeFactory = ShapeFactory()
+        val shape1 : Shape? = shapeFactory.getShape("CIRCLE")
+        val shape2 : Shape? = shapeFactory.getShape("RECTANGLE")
+        Log.d(FACTORY_PATTERN, "${shape1?.draw()}")
+        Log.d(FACTORY_PATTERN, "${shape2?.draw()}")
+
+
     }
 
     /**Singleton Examples
