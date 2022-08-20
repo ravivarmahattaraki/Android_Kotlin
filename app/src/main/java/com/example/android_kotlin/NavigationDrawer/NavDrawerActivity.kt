@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.android_kotlin.Activities.FirstActivity
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.CreationalPatternActivity
+import com.example.android_kotlin.DesignPattern.StructuralPattern.StructuralPatternActivity
 import com.example.android_kotlin.Fragments.FragmentActivity
 import com.example.android_kotlin.ListView.ListViewActivity
 import com.example.android_kotlin.PdfReader.PdfReaderActivity
@@ -85,7 +86,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 startMyActivity(CreationalPatternActivity::class.java)
             }
             R.id.nav_item_structural_patterns ->{
-                startMyActivity(FragmentActivity::class.java)
+                startMyActivity(StructuralPatternActivity::class.java)
             }
             R.id.nav_item_behavioural_patterns ->{
                 startMyActivity(PdfReaderActivity::class.java)

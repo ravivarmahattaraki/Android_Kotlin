@@ -45,6 +45,7 @@
         
         <!--Design patterns-->
         <activity android:name=".DesignPattern.CreationalPatterns.CreationalPatternActivity"/>
+        <activity android:name=".DesignPattern.StructuralPattern.StructuralPatternActivity"/>
     </application>
 
 </manifest>
