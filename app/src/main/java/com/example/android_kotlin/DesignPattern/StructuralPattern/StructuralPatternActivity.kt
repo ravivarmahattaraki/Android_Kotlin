@@ -16,7 +16,7 @@ class StructuralPatternActivity : AppCompatActivity() {
         setContentView(R.layout.activity_creational_pattern)
 
         /** Adapter Patterns
-         * */
+         * Client*/
         val germanPlug : GermanPlug = GermanSockets()
         Log.d(ADAPTER_PATTERN, germanPlug.provideElectricity())
 
