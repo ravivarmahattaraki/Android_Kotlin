@@ -27,13 +27,11 @@ class StructuralPatternActivity : AppCompatActivity() {
 
         /**Facade Patters
         * Client*/
-        val shapeMaker = ShapeMaker()
-        Log.d(FACADE_PATTERN, shapeMaker.drawRectangle())
-        Log.d(FACADE_PATTERN, shapeMaker.drawCircle())
+        FacadePattern()
 
     }
 
-    fun  adapterPattern(){
+    fun adapterPattern(){
         val germanPlug : GermanPlug = GermanSockets()
         Log.d(ADAPTER_PATTERN, germanPlug.provideElectricity())
 
@@ -42,5 +40,10 @@ class StructuralPatternActivity : AppCompatActivity() {
 
         val adapter : UkPlug = UkToGermanPlugConvertorAdapter(germanPlug)
         Log.d(ADAPTER_PATTERN, adapter.provideElectricity())
+    }
+    fun FacadePattern(){
+        val shapeMaker = ShapeMaker()
+        Log.d(FACADE_PATTERN, shapeMaker.drawRectangle())
+        Log.d(FACADE_PATTERN, shapeMaker.drawCircle())
     }
 }
