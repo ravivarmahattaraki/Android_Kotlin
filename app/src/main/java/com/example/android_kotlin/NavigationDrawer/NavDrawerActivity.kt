@@ -18,6 +18,7 @@ import com.example.android_kotlin.ListView.ListViewActivity
 import com.example.android_kotlin.PdfReader.PdfReaderActivity
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
+import com.example.android_kotlin.ViewModels.MyActivity
 
 class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
     private lateinit var toolBar : Toolbar
@@ -90,6 +91,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_behavioural_patterns ->{
                 startMyActivity(PdfReaderActivity::class.java)
+            }
+            R.id.nav_item_view_model ->{
+                startMyActivity(MyActivity::class.java)
             }
         }
         //return true item click state will be saved

@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_kotlin">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,27 +26,31 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--Topic Activity-->
-        <activity android:name=".Activities.FirstActivity"/>
-        <activity android:name=".Activities.SecondActivity"/>
-        <activity android:name=".Activities.ConfigChanges.ConfigChangeActivity"/>
+        </activity> <!-- Topic Activity -->
+        <activity android:name=".Activities.FirstActivity" />
+        <activity android:name=".Activities.SecondActivity" />
+        <activity android:name=".Activities.ConfigChanges.ConfigChangeActivity" />
 
-        <!--Topic List View-->
-        <activity android:name=".ListView.ListViewActivity"/>
+        <!-- Topic List View -->
+        <activity android:name=".ListView.ListViewActivity" />
 
-        <!--Topic Recycler View-->
-        <activity android:name=".RecyclerView.RecyclerViewActivity"/>
+        <!-- Topic Recycler View -->
+        <activity android:name=".RecyclerView.RecyclerViewActivity" />
 
-        <!--Topic Fragments-->
-        <activity android:name=".Fragments.FragmentActivity"/>
+        <!-- Topic Fragments -->
+        <activity android:name=".Fragments.FragmentActivity" />
 
-        <!--Topic Pdf Render-->
-        <activity android:name=".PdfReader.PdfReaderActivity"/>
-        
-        <!--Design patterns-->
-        <activity android:name=".DesignPattern.CreationalPatterns.CreationalPatternActivity"/>
-        <activity android:name=".DesignPattern.StructuralPattern.StructuralPatternActivity"/>
+        <!-- Topic Pdf Render -->
+        <activity android:name=".PdfReader.PdfReaderActivity" />
+
+        <!-- Design patterns -->
+        <activity android:name=".DesignPattern.CreationalPatterns.CreationalPatternActivity" />
+        <activity android:name=".DesignPattern.StructuralPattern.StructuralPatternActivity" />
+        <activity android:name=".DesignPattern.BehaviouralPatternActivity"/>
+
+        <!-- View Model -->
+        <activity android:name=".ViewModels.MyActivity" />
+        <activity android:name=".ViewModels.MyActivityTwo" />
     </application>
 
 </manifest>

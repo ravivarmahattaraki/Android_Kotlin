@@ -4,7 +4,10 @@ import android.app.Notification
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_kotlin.Const.Companion.PDF_FILE
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.JavaCarBuilder
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Builder.KotlinCarBuilder
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Factory.Shape
@@ -12,6 +15,7 @@ import com.example.android_kotlin.DesignPattern.CreationalPatterns.Factory.Shape
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ClassicSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.KotlinSingleTon
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.SingleTon.ThreadSafeSingleTon
+import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 import java.util.concurrent.CountDownLatch
 
@@ -23,11 +27,20 @@ class CreationalPatternActivity : AppCompatActivity() {
         const val FACTORY_PATTERN = "FACTORY_PATTERN"
 
     }
+    lateinit var imageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_creational_pattern)
-
+        imageView = findViewById(R.id.infoActivityIv)
+        imageView.setOnClickListener(View.OnClickListener {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val bundle = Bundle()
+            bundle.putString(PDF_FILE,"creational_design_pattern.pdf")
+            fragmentTransaction.replace(R.id.activityFragmentContainer,PdfRenderFragment::class.java,bundle)
+            fragmentTransaction.commit()
+        })
         /** Single ton patterns
          * */
         //classicSingleTon()
@@ -47,6 +60,7 @@ class CreationalPatternActivity : AppCompatActivity() {
         val shape2 : Shape? = shapeFactory.getShape("RECTANGLE")
         Log.d(FACTORY_PATTERN, "${shape1?.draw()}")
         Log.d(FACTORY_PATTERN, "${shape2?.draw()}")
+
 
 
     }

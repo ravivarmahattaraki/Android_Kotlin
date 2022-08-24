@@ -2,7 +2,10 @@ package com.example.android_kotlin.DesignPattern.StructuralPattern
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_kotlin.Const
 import com.example.android_kotlin.DesignPattern.CreationalPatterns.Factory.Shape
 import com.example.android_kotlin.DesignPattern.StructuralPattern.AdapterPattern.*
 import com.example.android_kotlin.DesignPattern.StructuralPattern.AdapterPattern.German.GermanPlug
@@ -11,9 +14,12 @@ import com.example.android_kotlin.DesignPattern.StructuralPattern.AdapterPattern
 import com.example.android_kotlin.DesignPattern.StructuralPattern.AdapterPattern.Uk.UkPlug
 import com.example.android_kotlin.DesignPattern.StructuralPattern.CompositePatterns.Employee
 import com.example.android_kotlin.DesignPattern.StructuralPattern.FacadePattern.ShapeMaker
+import com.example.android_kotlin.PdfReader.PdfRenderFragment
 import com.example.android_kotlin.R
 
 class StructuralPatternActivity : AppCompatActivity() {
+    lateinit var imageView: ImageView
+
     companion object{
         const val ADAPTER_PATTERN = "ADAPTER_PATTERN"
         const val FACADE_PATTERN = "FACADE_PATTERN"
@@ -22,8 +28,17 @@ class StructuralPatternActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_creational_pattern)
-
+        setContentView(R.layout.activity_structural_pattern)
+        imageView = findViewById(R.id.infoActivityIv)
+        imageView.setOnClickListener(View.OnClickListener {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val bundle = Bundle()
+            bundle.putString(Const.PDF_FILE,"structural_design_pattern.pdf")
+            fragmentTransaction.replace(R.id.activityFragmentContainer,
+                PdfRenderFragment::class.java,bundle)
+            fragmentTransaction.commit()
+        })
         /** Adapter Patterns
          * Client*/
         adapterPattern()

@@ -29,4 +29,7 @@
     <string name="structural_patterns">Structural Patterns</string>
     <string name="behavioural_patterns">Behavioural Patterns</string>
     <string name="creational_patterns">creational Patterns</string>
+    <string name="view_model">View Model</string>
+    <string name="click">click</string>
+    <string name="open_activity">Open Activity</string>
 </resources>
