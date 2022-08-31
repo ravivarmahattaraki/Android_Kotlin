@@ -32,4 +32,5 @@
     <string name="view_model">View Model</string>
     <string name="click">click</string>
     <string name="open_activity">Open Activity</string>
+    <string name="live_data">Live Data</string>
 </resources>

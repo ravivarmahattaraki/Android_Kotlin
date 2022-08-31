@@ -40,6 +40,10 @@
                 android:id="@+id/nav_item_view_model"
                 android:icon="@drawable/android"
                 android:title="@string/view_model"/>
+            <item
+                android:id="@+id/nav_item_live_date"
+                android:icon="@drawable/android"
+                android:title="@string/live_data"/>
         </menu>
     </item>
 

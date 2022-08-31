@@ -51,6 +51,10 @@
         <!-- View Model -->
         <activity android:name=".ViewModels.MyActivity" />
         <activity android:name=".ViewModels.MyActivityTwo" />
+
+        <!--Live Data-->
+        <activity android:name=".LiveData.LiveDataActivity"/>
+        <activity android:name=".LiveData.LiveDataActivityTwo"/>
     </application>
 
 </manifest>
