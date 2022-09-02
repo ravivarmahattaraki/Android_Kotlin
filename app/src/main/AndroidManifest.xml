@@ -55,6 +55,9 @@
         <!--Live Data-->
         <activity android:name=".LiveData.LiveDataActivity"/>
         <activity android:name=".LiveData.LiveDataActivityTwo"/>
+
+        <!--MVVM-->
+        <activity android:name=".MVVM.MVVMActivity"/>
     </application>
 
 </manifest>

@@ -33,4 +33,9 @@
     <string name="click">click</string>
     <string name="open_activity">Open Activity</string>
     <string name="live_data">Live Data</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="mvvm">MMVM</string>
 </resources>

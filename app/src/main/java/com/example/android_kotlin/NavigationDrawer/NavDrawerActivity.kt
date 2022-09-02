@@ -17,6 +17,7 @@ import com.example.android_kotlin.DesignPattern.StructuralPattern.StructuralPatt
 import com.example.android_kotlin.Fragments.FragmentActivity
 import com.example.android_kotlin.ListView.ListViewActivity
 import com.example.android_kotlin.LiveData.LiveDataActivity
+import com.example.android_kotlin.MVVM.MVVMActivity
 import com.example.android_kotlin.PdfReader.PdfReaderActivity
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
@@ -100,6 +101,10 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.nav_item_live_date ->{
                 startMyActivity(LiveDataActivity::class.java)
             }
+            R.id.nav_item_mvvm ->{
+                startMyActivity(MVVMActivity::class.java)
+            }
+
         }
         //return true item click state will be saved
         return false
