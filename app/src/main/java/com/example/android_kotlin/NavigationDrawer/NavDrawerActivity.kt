@@ -22,6 +22,7 @@ import com.example.android_kotlin.PdfReader.PdfReaderActivity
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
 import com.example.android_kotlin.ViewModels.MyActivity
+import com.example.android_kotlin.viewBinding.ViewBindingExampleActivity
 
 class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
     private lateinit var toolBar : Toolbar
@@ -103,6 +104,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_mvvm ->{
                 startMyActivity(MVVMActivity::class.java)
+            }
+            R.id.nav_item_view_binding ->{
+                startMyActivity(ViewBindingExampleActivity::class.java)
             }
 
         }

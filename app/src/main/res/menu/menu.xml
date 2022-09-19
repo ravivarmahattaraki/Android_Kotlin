@@ -48,6 +48,11 @@
                 android:id="@+id/nav_item_mvvm"
                 android:icon="@drawable/android"
                 android:title="@string/mvvm"/>
+
+            <item
+                android:id="@+id/nav_item_view_binding"
+                android:icon="@drawable/android"
+                android:title="@string/view_binding"/>
         </menu>
     </item>
 

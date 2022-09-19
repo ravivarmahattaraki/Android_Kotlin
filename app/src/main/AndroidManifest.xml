@@ -58,6 +58,9 @@
 
         <!--MVVM-->
         <activity android:name=".MVVM.MVVMActivity"/>
+
+        <!--View Binding-->
+        <activity android:name=".viewBinding.ViewBindingExampleActivity"/>
     </application>
 
 </manifest>
