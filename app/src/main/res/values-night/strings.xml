@@ -40,4 +40,9 @@
     <string name="mvvm">MMVM</string>
     <string name="view_binding">View Binding</string>
     <string name="submit">Submit</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="incorrect_username_password">Incorrecr username/Password</string>
+    <string name="login_success">Login successfully</string>
+    <string name="data_binding">Data Binding</string>
 </resources>

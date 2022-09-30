@@ -53,6 +53,10 @@
                 android:id="@+id/nav_item_view_binding"
                 android:icon="@drawable/android"
                 android:title="@string/view_binding"/>
+            <item
+                android:id="@+id/nav_item_data_binding"
+                android:icon="@drawable/android"
+                android:title="@string/data_binding"/>
         </menu>
     </item>
 
