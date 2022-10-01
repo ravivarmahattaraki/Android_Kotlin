@@ -69,6 +69,8 @@
         <activity android:name=".broadCastReceiver.MyBroadCastActivity"/>
         <receiver android:name=".broadCastReceiver.MtBroadCatReceiver"/>
 
+        <!--Services-->
+        <activity android:name=".services.ServiceExampleActivity"/>
 
     </application>
 

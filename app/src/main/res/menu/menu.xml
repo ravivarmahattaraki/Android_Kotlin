@@ -61,6 +61,10 @@
                 android:id="@+id/nav_item_broad_cast_receiver"
                 android:icon="@drawable/android"
                 android:title="@string/broad_cast_receivers"/>
+            <item
+                android:id="@+id/nav_item_services"
+                android:icon="@drawable/android"
+                android:title="@string/services"/>
         </menu>
     </item>
 

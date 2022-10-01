@@ -25,16 +25,20 @@
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_pdf_render.xml" value="0.15364583333333334" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_recycler_view.xml" value="0.14114583333333333" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_second.xml" value="0.14375" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_service_example.xml" value="0.33" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_structural_pattern.xml" value="0.14479166666666668" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_view_binding_example.xml" value="0.1921875" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/activity_view_model.xml" value="0.126953125" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/app_bar_main.xml" value="0.1921875" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/app_bar_nav_drawer.xml" value="0.1921875" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/content_nav_drawer.xml" value="0.1921875" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_bound_service.xml" value="0.13802083333333334" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_foreground_service.xml" value="0.13802083333333334" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_gallery.xml" value="0.12083333333333333" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_one.xml" value="0.1" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_pdf_render.xml" value="0.16145833333333334" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_pdf_viewer.xml" value="0.184375" />
+        <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_started_service.xml" value="0.25" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/fragment_two.xml" value="0.12864583333333332" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/item_list_view.xml" value="0.11927083333333334" />
         <entry key="..\:/androd_projects/Android_kotlin/Android_Kotlin/app/src/main/res/layout/item_pdf_page_render.xml" value="0.19114583333333332" />

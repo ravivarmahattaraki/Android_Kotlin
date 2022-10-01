@@ -49,4 +49,10 @@
     <string name="broad_cast_receivers">Broad cast receivers</string>
     <string name="send_local_broadcast">Send local Broadcast</string>
     <string name="send_global_broadcast">Send Global Broadcast</string>
+    <string name="started_service">Started Service</string>
+    <string name="bound_service">Bound Service</string>
+    <string name="foreground_service">Foreground service</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop service</string>
+    <string name="services">Services</string>
 </resources>
