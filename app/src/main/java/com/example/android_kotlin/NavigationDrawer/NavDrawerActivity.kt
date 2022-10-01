@@ -22,6 +22,7 @@ import com.example.android_kotlin.PdfReader.PdfReaderActivity
 import com.example.android_kotlin.R
 import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
 import com.example.android_kotlin.ViewModels.MyActivity
+import com.example.android_kotlin.broadCastReceiver.MyBroadCastActivity
 import com.example.android_kotlin.dataBinding.DataBindingExampleActivity
 import com.example.android_kotlin.viewBinding.ViewBindingExampleActivity
 
@@ -111,6 +112,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_data_binding ->{
                 startMyActivity(DataBindingExampleActivity::class.java)
+            }
+            R.id.nav_item_broad_cast_receiver ->{
+                startMyActivity(MyBroadCastActivity::class.java)
             }
 
         }

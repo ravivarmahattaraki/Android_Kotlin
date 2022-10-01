@@ -64,6 +64,12 @@
 
         <!--Data Binding-->
         <activity android:name=".dataBinding.DataBindingExampleActivity"/>
+
+        <!--Broad Cast-->
+        <activity android:name=".broadCastReceiver.MyBroadCastActivity"/>
+        <receiver android:name=".broadCastReceiver.MtBroadCatReceiver"/>
+
+
     </application>
 
 </manifest>

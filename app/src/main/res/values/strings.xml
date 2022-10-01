@@ -58,4 +58,8 @@
     <string name="incorrect_username_password">Incorrecr username/Password</string>
     <string name="login_success">Login successfully</string>
     <string name="data_binding">Data Binding</string>
+    <string name="send_broad_cast">Send Broad Cast</string>
+    <string name="broad_cast_receivers">Broad cast receivers</string>
+    <string name="send_local_broadcast">Send local Broadcast</string>
+    <string name="send_global_broadcast">Send Global Broadcast</string>
 </resources>

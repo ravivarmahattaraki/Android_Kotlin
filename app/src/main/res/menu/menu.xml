@@ -57,6 +57,10 @@
                 android:id="@+id/nav_item_data_binding"
                 android:icon="@drawable/android"
                 android:title="@string/data_binding"/>
+            <item
+                android:id="@+id/nav_item_broad_cast_receiver"
+                android:icon="@drawable/android"
+                android:title="@string/broad_cast_receivers"/>
         </menu>
     </item>
 
