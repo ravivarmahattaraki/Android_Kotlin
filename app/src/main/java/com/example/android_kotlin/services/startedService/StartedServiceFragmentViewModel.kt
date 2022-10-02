@@ -13,6 +13,6 @@ class StartedServiceFragmentViewModel : ViewModel() {
     }
 
     fun stopServiceClick(view : View){
-        startServiceBtn.value = true
+        stopServiceBtm.value = true
     }
 }

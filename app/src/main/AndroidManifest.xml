@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -71,7 +72,9 @@
 
         <!--Services-->
         <activity android:name=".services.ServiceExampleActivity"/>
-
+        <service android:name=".services.startedService.MyStartedService"/>
+        <service android:name=".services.boundService.MyBoundService"/>
+        <service android:name=".services.foreGroundService.MyForeGroundService"/>
     </application>
 
 </manifest>

@@ -7,12 +7,19 @@ import androidx.lifecycle.ViewModel
 class BoundServiceFragmentViewModel : ViewModel(){
     val startServiceBtn = MutableLiveData<Boolean>()
     val stopServiceBtm = MutableLiveData<Boolean>()
+    val showTimeBtn = MutableLiveData<Boolean>()
+
+    val setTimeTv = MutableLiveData<String>()
 
     fun startServiceClick(view : View){
         startServiceBtn.value = true
     }
 
     fun stopServiceClick(view : View){
-        startServiceBtn.value = true
+        stopServiceBtm.value = true
+    }
+
+    fun showTimeClick(view: View){
+        showTimeBtn.value = true
     }
 }

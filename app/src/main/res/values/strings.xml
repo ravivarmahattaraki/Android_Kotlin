@@ -68,4 +68,5 @@
     <string name="start_service">Start Service</string>
     <string name="stop_service">Stop service</string>
     <string name="services">Services</string>
+    <string name="show_time">Show Time</string>
 </resources>
