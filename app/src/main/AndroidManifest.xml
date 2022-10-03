@@ -75,6 +75,7 @@
         <service android:name=".services.startedService.MyStartedService"/>
         <service android:name=".services.boundService.MyBoundService"/>
         <service android:name=".services.foreGroundService.MyForeGroundService"/>
+        <service android:name=".services.intentService.MyIntentService"/>
     </application>
 
 </manifest>

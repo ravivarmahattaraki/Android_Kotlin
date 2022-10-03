@@ -9,6 +9,7 @@ import com.example.android_kotlin.R
 import com.example.android_kotlin.databinding.ActivityServiceExampleBinding
 import com.example.android_kotlin.services.boundService.BoundServiceFragment
 import com.example.android_kotlin.services.foreGroundService.ForegroundServiceFragment
+import com.example.android_kotlin.services.intentService.MyIntentServiceFragment
 import com.example.android_kotlin.services.startedService.StartedServiceFragment
 
 class ServiceExampleActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class ServiceExampleActivity : AppCompatActivity() {
         val STARTED_SERVICE = "STARTED_SERVICE"
         val BOUND_SERVICE = "BOUND_SERVICE"
         val FOREGROUND_SERVICE = "FOREGROUND_SERVICE"
+        val INTENT_SERVICE = "INTENT_SERVICE"
     }
     override fun onCreate(bundle : Bundle?){
         super.onCreate(bundle)
@@ -47,6 +49,14 @@ class ServiceExampleActivity : AppCompatActivity() {
             val fragment = ForegroundServiceFragment()
             fragmentTransaction.add(mBinding.fragmentContainer.id,fragment, FOREGROUND_SERVICE)
             fragmentTransaction.addToBackStack(STARTED_SERVICE)
+            fragmentTransaction.commit()
+        })
+        activityVm.intentServiceBtn.observe(this, Observer {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val fragment = MyIntentServiceFragment()
+            fragmentTransaction.add(mBinding.fragmentContainer.id,fragment, INTENT_SERVICE)
+            fragmentTransaction.addToBackStack(INTENT_SERVICE)
             fragmentTransaction.commit()
         })
     }

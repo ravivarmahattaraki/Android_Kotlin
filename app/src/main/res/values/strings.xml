@@ -69,4 +69,5 @@
     <string name="stop_service">Stop service</string>
     <string name="services">Services</string>
     <string name="show_time">Show Time</string>
+    <string name="intent_service">Intent Service</string>
 </resources>
