@@ -70,4 +70,6 @@
     <string name="services">Services</string>
     <string name="show_time">Show Time</string>
     <string name="intent_service">Intent Service</string>
+    <string name="enqueue_work">Enqueue Work</string>
+    <string name="job_intent_service">Job intent service</string>
 </resources>

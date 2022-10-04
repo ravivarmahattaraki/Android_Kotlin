@@ -9,6 +9,7 @@ class ServiceExampleViewModel : ViewModel() {
     val foregroundServiceBtn = MutableLiveData<Boolean>()
     val boundServiceBtn = MutableLiveData<Boolean>()
     val intentServiceBtn = MutableLiveData<Boolean>()
+    val jobIntentServiceBtn = MutableLiveData<Boolean>()
 
     fun startedServiceClick(view : View){
         startServiceBtn.value = true
@@ -24,5 +25,9 @@ class ServiceExampleViewModel : ViewModel() {
 
     fun intentServiceClick(view : View){
         intentServiceBtn.value = true
+    }
+
+    fun jobIntentServiceClick(view : View){
+        jobIntentServiceBtn.value = true
     }
 }

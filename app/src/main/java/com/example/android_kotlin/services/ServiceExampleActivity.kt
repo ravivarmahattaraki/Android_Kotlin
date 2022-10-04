@@ -10,6 +10,8 @@ import com.example.android_kotlin.databinding.ActivityServiceExampleBinding
 import com.example.android_kotlin.services.boundService.BoundServiceFragment
 import com.example.android_kotlin.services.foreGroundService.ForegroundServiceFragment
 import com.example.android_kotlin.services.intentService.MyIntentServiceFragment
+import com.example.android_kotlin.services.jobIntentService.MyJobIntentService
+import com.example.android_kotlin.services.jobIntentService.MyJobIntentServiceFragment
 import com.example.android_kotlin.services.startedService.StartedServiceFragment
 
 class ServiceExampleActivity : AppCompatActivity() {
@@ -18,6 +20,8 @@ class ServiceExampleActivity : AppCompatActivity() {
         val BOUND_SERVICE = "BOUND_SERVICE"
         val FOREGROUND_SERVICE = "FOREGROUND_SERVICE"
         val INTENT_SERVICE = "INTENT_SERVICE"
+        val JOB_INTENT_SERVICE = "JOB_INTENT_SERVICE"
+
     }
     override fun onCreate(bundle : Bundle?){
         super.onCreate(bundle)
@@ -57,6 +61,14 @@ class ServiceExampleActivity : AppCompatActivity() {
             val fragment = MyIntentServiceFragment()
             fragmentTransaction.add(mBinding.fragmentContainer.id,fragment, INTENT_SERVICE)
             fragmentTransaction.addToBackStack(INTENT_SERVICE)
+            fragmentTransaction.commit()
+        })
+        activityVm.jobIntentServiceBtn.observe(this, Observer{
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val fragment = MyJobIntentServiceFragment()
+            fragmentTransaction.add(mBinding.fragmentContainer.id, fragment)
+            fragmentTransaction.addToBackStack(JOB_INTENT_SERVICE)
             fragmentTransaction.commit()
         })
     }
