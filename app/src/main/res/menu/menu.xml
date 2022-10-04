@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_about"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/nav_item_help"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/help" />
+    </group>
+
+    <item android:title="@string/topics">
+        <menu>
+            <item
+                android:id="@+id/nav_item_activites"
+                android:icon="@drawable/android"
+                android:title="@string/activity" />
+            <item
+                android:id="@+id/nav_item_listview"
+                android:icon="@drawable/android"
+                android:title="@string/list_view" />
+            <item
+                android:id="@+id/nav_item_recycler_view"
+                android:icon="@drawable/android"
+                android:title="@string/recycler_view" />
+            <item
+                android:id="@+id/nav_item_fragments"
+                android:icon="@drawable/android"
+                android:title="@string/fragments"/>
+            <item
+                android:id="@+id/nav_item_pdf_viewer"
+                android:icon="@drawable/android"
+                android:title="@string/pdf_viewer"/>
+            <item
+                android:id="@+id/nav_item_view_model"
+                android:icon="@drawable/android"
+                android:title="@string/view_model"/>
+            <item
+                android:id="@+id/nav_item_live_date"
+                android:icon="@drawable/android"
+                android:title="@string/live_data"/>
+            <item
+                android:id="@+id/nav_item_mvvm"
+                android:icon="@drawable/android"
+                android:title="@string/mvvm"/>
+
+            <item
+                android:id="@+id/nav_item_view_binding"
+                android:icon="@drawable/android"
+                android:title="@string/view_binding"/>
+            <item
+                android:id="@+id/nav_item_data_binding"
+                android:icon="@drawable/android"
+                android:title="@string/data_binding"/>
+            <item
+                android:id="@+id/nav_item_broad_cast_receiver"
+                android:icon="@drawable/android"
+                android:title="@string/broad_cast_receivers"/>
+            <item
+                android:id="@+id/nav_item_services"
+                android:icon="@drawable/android"
+                android:title="@string/services"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/design_patterns">
+        <menu>
+            <item android:id="@+id/nav_item_creational_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/creational_patterns"/>
+
+            <item android:id="@+id/nav_item_structural_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/structural_patterns"/>
+
+            <item android:id="@+id/nav_item_behavioural_patterns"
+                android:icon="@drawable/android"
+                android:title="@string/behavioural_patterns"/>
+
+        </menu>
+    </item>
+
+</menu>
