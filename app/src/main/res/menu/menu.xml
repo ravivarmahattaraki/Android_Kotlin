@@ -65,6 +65,11 @@
                 android:id="@+id/nav_item_services"
                 android:icon="@drawable/android"
                 android:title="@string/services"/>
+
+            <item
+                android:id="@+id/nav_item_job_schedulers"
+                android:icon="@drawable/android"
+                android:title="@string/job_schedulers"/>
         </menu>
     </item>
 

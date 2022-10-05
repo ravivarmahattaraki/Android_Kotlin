@@ -1,5 +1,6 @@
 package com.example.android_kotlin.NavigationDrawer
 
+import android.app.job.JobScheduler
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -24,6 +25,7 @@ import com.example.android_kotlin.RecyclerView.RecyclerViewActivity
 import com.example.android_kotlin.ViewModels.MyActivity
 import com.example.android_kotlin.broadCastReceiver.MyBroadCastActivity
 import com.example.android_kotlin.dataBinding.DataBindingExampleActivity
+import com.example.android_kotlin.jobSchedulers.MyJobSchedulerActivity
 import com.example.android_kotlin.services.ServiceExampleActivity
 import com.example.android_kotlin.viewBinding.ViewBindingExampleActivity
 
@@ -119,6 +121,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_services ->{
                 startMyActivity(ServiceExampleActivity::class.java)
+            }
+            R.id.nav_item_job_schedulers ->{
+                startMyActivity(MyJobSchedulerActivity::class.java)
             }
 
         }
