@@ -23,4 +23,10 @@
         <item name="android:textStyle">normal</item>
         <item name="android:text">@string/default_value</item>
     </style>
+
+    <style name="work_manger_btn_style">
+        <item name="android:textSize">@dimen/work_manager_btn_text_size</item>
+        <item name="android:layout_margin">@dimen/work_manager_btn_margin</item>
+    </style>
+
 </resources>

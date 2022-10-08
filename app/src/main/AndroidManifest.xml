@@ -83,6 +83,9 @@
         <service android:name=".jobSchedulers.MyJobSchedulers"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
 
+        <!--Work manager-->
+        <activity android:name=".workManager.MyWorkManagerActivity"/>
+
     </application>
 
 </manifest>

@@ -70,6 +70,10 @@
                 android:id="@+id/nav_item_job_schedulers"
                 android:icon="@drawable/android"
                 android:title="@string/job_schedulers"/>
+            <item
+                android:id="@+id/nav_item_work_managers"
+                android:icon="@drawable/android"
+                android:title="@string/work_manager"/>
         </menu>
     </item>
 

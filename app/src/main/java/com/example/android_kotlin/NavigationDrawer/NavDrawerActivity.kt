@@ -28,6 +28,7 @@ import com.example.android_kotlin.dataBinding.DataBindingExampleActivity
 import com.example.android_kotlin.jobSchedulers.MyJobSchedulerActivity
 import com.example.android_kotlin.services.ServiceExampleActivity
 import com.example.android_kotlin.viewBinding.ViewBindingExampleActivity
+import com.example.android_kotlin.workManager.MyWorkManagerActivity
 
 class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
     private lateinit var toolBar : Toolbar
@@ -124,6 +125,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
             R.id.nav_item_job_schedulers ->{
                 startMyActivity(MyJobSchedulerActivity::class.java)
+            }
+            R.id.nav_item_work_managers ->{
+                startMyActivity(MyWorkManagerActivity::class.java)
             }
 
         }

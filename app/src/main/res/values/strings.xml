@@ -75,4 +75,6 @@
     <string name="start_job">Start job</string>
     <string name="cancel_task">Cancel task</string>
     <string name="job_schedulers">Job schedulers</string>
+    <string name="work_manager">Work Manager</string>
+    <string name="one_time_work_request">One time work request</string>
 </resources>
