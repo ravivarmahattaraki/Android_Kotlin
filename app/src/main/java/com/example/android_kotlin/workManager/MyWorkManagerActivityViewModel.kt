@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 class MyWorkManagerActivityViewModel: ViewModel() {
     val onTimeWorkReqClick = MutableLiveData<Boolean>()
     val expeditedWorkReqBtnClick = MutableLiveData<Boolean>()
+    val periodicWorkReqBtn = MutableLiveData<Boolean>()
 
     fun onTimeWorkReqClick(view : View){
         onTimeWorkReqClick.value = true
@@ -14,5 +15,9 @@ class MyWorkManagerActivityViewModel: ViewModel() {
 
     fun expeditedWorkReqBtnClick(view : View){
         expeditedWorkReqBtnClick.value = true
+    }
+
+    fun periodicWorkReqBtnClick(view : View){
+        periodicWorkReqBtn.value = true
     }
 }

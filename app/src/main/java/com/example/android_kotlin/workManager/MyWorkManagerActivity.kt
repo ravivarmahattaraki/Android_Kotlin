@@ -10,6 +10,7 @@ import com.example.android_kotlin.R
 import com.example.android_kotlin.databinding.ActivityWorkManagerBinding
 import com.example.android_kotlin.workManager.expeditedWorkRequest.ExpeditedWorkRequestFragment
 import com.example.android_kotlin.workManager.oneTimeWorkRequest.OneTimeWorkRequestFragment
+import com.example.android_kotlin.workManager.periodicWorkRequest.PeriodicWorkRequestFragment
 
 class MyWorkManagerActivity : AppCompatActivity() {
     lateinit var mActivityVm : MyWorkManagerActivityViewModel
@@ -27,6 +28,10 @@ class MyWorkManagerActivity : AppCompatActivity() {
 
         mActivityVm.expeditedWorkReqBtnClick.observe(this, Observer{
             openFragment("ExpeditedWorkRequestFragment", ExpeditedWorkRequestFragment())
+        })
+
+        mActivityVm.periodicWorkReqBtn.observe(this, Observer{
+            openFragment("PeriodicWorkRequest", PeriodicWorkRequestFragment())
         })
 
     }

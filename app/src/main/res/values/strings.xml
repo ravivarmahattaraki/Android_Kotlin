@@ -80,4 +80,11 @@
     <string name="start_one_time_work">Start one time work</string>
     <string name="expedited_work_request">Expedited Work Request</string>
     <string name="start_expedited_work_request">Start Expedited Work Request</string>
+    <string name="periodic_work_request">Periodic work request</string>
+    <string name="start_periodic_work_request">Start Periodic Work Request</string>
+    <string name="enter_repeat_interval">Enter repeat Interval(min 15)</string>
+    <string name="enter_flex_interval">Enter flex Interval(min 5)</string>
+    <string name="enqueued_time">Enqueued Time</string>
+    <string name="started_time">Started Time</string>
+    <string name="finished_time">Finished Time</string>
 </resources>
