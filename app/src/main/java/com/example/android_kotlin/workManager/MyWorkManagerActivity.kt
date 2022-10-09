@@ -3,10 +3,12 @@ package com.example.android_kotlin.workManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.android_kotlin.R
 import com.example.android_kotlin.databinding.ActivityWorkManagerBinding
+import com.example.android_kotlin.workManager.expeditedWorkRequest.ExpeditedWorkRequestFragment
 import com.example.android_kotlin.workManager.oneTimeWorkRequest.OneTimeWorkRequestFragment
 
 class MyWorkManagerActivity : AppCompatActivity() {
@@ -20,13 +22,20 @@ class MyWorkManagerActivity : AppCompatActivity() {
         mBinding.activityVm = mActivityVm
 
         mActivityVm.onTimeWorkReqClick.observe(this, Observer {
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            val fragment = OneTimeWorkRequestFragment()
-            fragmentTransaction.add(mBinding.fragmentContainer.id, fragment,"OneTimeWorkRequestFragment")
-            fragmentTransaction.addToBackStack("OneTimeWorkRequestFragment")
-            fragmentTransaction.commit()
+            openFragment("OneTimeWorkRequestFragment", OneTimeWorkRequestFragment())
         })
 
+        mActivityVm.expeditedWorkReqBtnClick.observe(this, Observer{
+            openFragment("ExpeditedWorkRequestFragment", ExpeditedWorkRequestFragment())
+        })
+
+    }
+
+    fun openFragment(tag : String, fragment : Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(mBinding.fragmentContainer.id, fragment,tag)
+        fragmentTransaction.addToBackStack(tag)
+        fragmentTransaction.commit()
     }
 }

@@ -43,13 +43,27 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/expeditedWorkReqBtn"
+                style="@style/work_manger_btn_style"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:onClick="@{activityVm::expeditedWorkReqBtnClick}"
+                android:text="@string/expedited_work_request"
+                app:layout_constraintBottom_toTopOf="@+id/guideline1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.fragment.app.FragmentContainerView
+            android:visibility="visible"
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:name="com.example.android_kotlin.workManager.oneTimeWorkRequest.OneTimeWorkRequestFragment" />
+            tools:name="com.example.android_kotlin.workManager.oneTimeWorkRequest.OneTimeWorkRequestFragment"
+            tools:layout="@layout/wm_fragment_one_time_work_request" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
