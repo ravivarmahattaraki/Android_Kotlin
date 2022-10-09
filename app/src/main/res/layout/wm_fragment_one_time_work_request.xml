@@ -20,10 +20,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:textSize="30sp"
+            android:textColor="@color/black"
             android:text="@string/one_time_work_request"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/progressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:textColor="@color/black"
+            android:text="@{fragmentVm.progressTv}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <Button
+            android:id="@+id/startWorkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:onClick="@{fragmentVm::startWorkBtnClick}"
+            android:text="@string/start_one_time_work"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressTv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

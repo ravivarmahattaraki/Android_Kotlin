@@ -29,4 +29,6 @@
         <item name="android:layout_margin">@dimen/work_manager_btn_margin</item>
     </style>
 
+    <style name="work_manger_fragment_title"></style>
+
 </resources>

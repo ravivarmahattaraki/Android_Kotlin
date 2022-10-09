@@ -64,4 +64,5 @@
     <string name="job_schedulers">Job schedulers</string>
     <string name="work_manager">Work Manager</string>
     <string name="one_time_work_request">One time work request</string>
+    <string name="start_one_time_work">Start one time work</string>
 </resources>
