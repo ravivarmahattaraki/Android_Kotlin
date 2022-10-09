@@ -87,4 +87,5 @@
     <string name="enqueued_time">Enqueued Time</string>
     <string name="started_time">Started Time</string>
     <string name="finished_time">Finished Time</string>
+    <string name="enter_working_time">Enter Working Time</string>
 </resources>

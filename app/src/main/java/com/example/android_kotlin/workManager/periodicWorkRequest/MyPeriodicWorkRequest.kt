@@ -12,14 +12,17 @@ import com.example.android_kotlin.workManager.periodicWorkRequest.PeriodicWorkRe
 import com.example.android_kotlin.workManager.periodicWorkRequest.PeriodicWorkRequestFragment.Companion.WORK_STATE
 import com.example.android_kotlin.workManager.periodicWorkRequest.PeriodicWorkRequestFragment.Companion.WORK_STATE_TIME
 
+/** Periodic Work Request */
 class MyPeriodicWorkRequest(var context:Context, var params:WorkerParameters) : Worker(context,params) {
+    companion object{
+        var WORK_TIME = 10
+    }
     override fun doWork(): Result {
-
         sendWorkStateBroadCast(WorkState.STARTED.state, System.currentTimeMillis())
 
-        for(i in 1..10){
+        for(i in 1..WORK_TIME){
             Thread.sleep(1000)
-            sendProgressBroadCast("Progress ${i*10} % complete")
+            sendProgressBroadCast("Progress ${i} % complete")
         }
 
         sendWorkStateBroadCast(WorkState.FINISHED.state, System.currentTimeMillis())

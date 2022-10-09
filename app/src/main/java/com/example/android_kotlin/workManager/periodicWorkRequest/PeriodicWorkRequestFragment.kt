@@ -18,6 +18,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.android_kotlin.R
 import com.example.android_kotlin.databinding.WmFragmentPeriodicWorkRequestBinding
+import com.example.android_kotlin.workManager.periodicWorkRequest.MyPeriodicWorkRequest.Companion.WORK_TIME
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -56,6 +57,7 @@ class PeriodicWorkRequestFragment : Fragment() {
             sendWorkStateBroadCast(WorkState.ENQUEUED.state,System.currentTimeMillis())
             val repeatInterval = mBinding.repeatIntervalET.text.toString().toLong()
             val flexInterval = mBinding.flexIntervalET.text.toString().toLong()
+            WORK_TIME = mBinding.workTimET.text.toString().toInt()
             val periodicWorkRequest = PeriodicWorkRequestBuilder<MyPeriodicWorkRequest>(
                 repeatInterval, TimeUnit.MINUTES,
                 flexInterval, TimeUnit.MINUTES)
