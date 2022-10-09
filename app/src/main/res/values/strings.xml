@@ -88,4 +88,5 @@
     <string name="started_time">Started Time</string>
     <string name="finished_time">Finished Time</string>
     <string name="enter_working_time">Enter Working Time</string>
+    <string name="cancel_all_works">Cancel All Works</string>
 </resources>

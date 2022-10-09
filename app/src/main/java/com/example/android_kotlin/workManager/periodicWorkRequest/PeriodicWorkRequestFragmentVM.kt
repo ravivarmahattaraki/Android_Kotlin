@@ -8,6 +8,7 @@ class PeriodicWorkRequestFragmentVM : ViewModel() {
 
     val progressTv = MutableLiveData<String>()
     val startWorkBtn = MutableLiveData<Boolean>()
+    val cancelWorkBtn = MutableLiveData<Boolean>()
     val enqueuedTimeTv = MutableLiveData<String>()
     val startedTimeTv = MutableLiveData<String>()
     val finishedTimeTv = MutableLiveData<String>()
@@ -15,4 +16,9 @@ class PeriodicWorkRequestFragmentVM : ViewModel() {
     fun startWorkBtnClick(view : View){
         startWorkBtn.value = true
     }
+
+    fun cancelWorkBtnClick(view : View){
+        cancelWorkBtn.value = true
+    }
+
 }

@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -63,6 +64,15 @@ class PeriodicWorkRequestFragment : Fragment() {
                 flexInterval, TimeUnit.MINUTES)
                 .build()
             WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+        })
+
+        mFragmentVm.cancelWorkBtn.observe(viewLifecycleOwner, Observer {
+            mFragmentVm.progressTv.value = "All work cancelled"
+            mFragmentVm.startedTimeTv.value = ""
+            mFragmentVm.enqueuedTimeTv.value = ""
+            mFragmentVm.finishedTimeTv.value = ""
+
+            WorkManager.getInstance(requireContext()).cancelAllWork()
         })
 
         return mBinding.root
