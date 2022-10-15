@@ -76,4 +76,10 @@
     <string name="finished_time">Finished Time</string>
     <string name="enter_working_time">Enter Working Time</string>
     <string name="cancel_all_works">Cancel All Works</string>
+    <string name="unique_work_request">Unique Work Request</string>
+    <string name="replace_policy">Replace Policy</string>
+    <string name="reset_work_count">Reset Work Count</string>
+    <string name="keep_policy">Keep policy</string>
+    <string name="append_policy">Append Policy</string>
+    <string name="append_or_replace_policy">Append Or Replace Policy</string>
 </resources>

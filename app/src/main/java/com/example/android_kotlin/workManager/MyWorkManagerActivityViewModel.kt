@@ -8,6 +8,7 @@ class MyWorkManagerActivityViewModel: ViewModel() {
     val onTimeWorkReqClick = MutableLiveData<Boolean>()
     val expeditedWorkReqBtnClick = MutableLiveData<Boolean>()
     val periodicWorkReqBtn = MutableLiveData<Boolean>()
+    val uniqueWorkReqBtn = MutableLiveData<Boolean>()
 
     fun onTimeWorkReqClick(view : View){
         onTimeWorkReqClick.value = true
@@ -19,5 +20,8 @@ class MyWorkManagerActivityViewModel: ViewModel() {
 
     fun periodicWorkReqBtnClick(view : View){
         periodicWorkReqBtn.value = true
+    }
+    fun uniqueWorkReqBtnClick(view : View){
+        uniqueWorkReqBtn.value = true
     }
 }
