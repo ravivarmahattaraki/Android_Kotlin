@@ -159,7 +159,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toStartOf="@+id/guideline1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+            app:layout_constraintTop_toTopOf= "@+id/guideline4" />
 
         <TextView
             android:id="@+id/appendOrReplacePolicyTv"
