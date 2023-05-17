@@ -74,6 +74,10 @@
                 android:id="@+id/nav_item_work_managers"
                 android:icon="@drawable/android"
                 android:title="@string/work_manager"/>
+            <item
+                android:id="@+id/nav_item_activit_result_Api"
+                android:icon="@drawable/android"
+                android:title="@string/activity_resullt_api"/>
         </menu>
     </item>
 

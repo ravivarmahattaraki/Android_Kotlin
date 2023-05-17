@@ -95,4 +95,7 @@
     <string name="keep_policy">Keep policy</string>
     <string name="append_policy">Append Policy</string>
     <string name="append_or_replace_policy">Append Or Replace Policy</string>
+    <string name="activity_resullt_api">Activity Result Api</string>
+    <string name="start_second_activity_for_result">Start second activity for result</string>
+    <string name="navigate_back">Navigate back</string>
 </resources>

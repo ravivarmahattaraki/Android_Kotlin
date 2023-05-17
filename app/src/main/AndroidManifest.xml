@@ -86,6 +86,10 @@
         <!--Work manager-->
         <activity android:name=".workManager.MyWorkManagerActivity"/>
 
+        <!--Activity result Api-->
+        <activity android:name=".activityResultApi.ActivityResultFirstActivity"/>
+        <activity android:name=".activityResultApi.ActivityResultSecondActivity"/>
+
     </application>
 
 </manifest>
